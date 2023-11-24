@@ -96,6 +96,12 @@ public class Orador {
 	public void setFechaAlta(LocalDate fechaAlta) {
 		this.fechaAlta = fechaAlta;
 	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	
 	
 	///ALT+shit+s
 	

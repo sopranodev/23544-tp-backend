@@ -11,8 +11,10 @@ public class MainOradorRepository {
 		 //Interface i = new ClaseQueImplementa();
 		 OradorRepository repository = new MySqlOradorRepository();
 		 
-//		 Orador newOrador = new Orador("carlos", "lopez", "email@email.com", "java", LocalDate.now());
+//		 Orador newOrador = new Orador("carlos", "lopez", "email@email.com", "java", LocalDatetime.now());
 //		 repository.save(newOrador);
+		 
+		// repository.save(new Orador);
 		 
 		 Orador newOrador = repository.getById(3L);
 		 System.out.println(newOrador);

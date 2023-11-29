@@ -1,6 +1,6 @@
 package ar.com.codoacodo.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Orador {
 	//atributos: encapsulamiento
@@ -9,28 +9,28 @@ public class Orador {
 	private String apellido;
 	private String mail;
 	private String tema;
-	private LocalDate fechaAlta;
+	private LocalDateTime fechaAlta;
 	
 	//constructor/es
 	//usar cuando voy a enviar un objeto a la db
 	//insert into orador (campos,..) values(...)
-	public Orador(String nombre, String apellido, String mail, String tema, LocalDate fechaAlta) {
+	public Orador(String nombre, String apellido, String mail, String tema, LocalDateTime fechaAlta) {
 		init(nombre, apellido, mail, tema, fechaAlta);
 		//alt+shit+m
 	}
 	//alt+shit+s
 
-	public Orador(Long id, String nombre, String apellido, String mail, String tema, LocalDate fechaAlta) {
+	public Orador(Long id, String nombre, String apellido, String mail, String tema, LocalDateTime localDateTime) {
 		this.id = id;
-		init(nombre, apellido, mail, tema, fechaAlta);
+		init(nombre, apellido, mail, tema, localDateTime);
 	}
 	
-	private void init(String nombre, String apellido, String mail, String tema, LocalDate fechaAlta) {
+	private void init(String nombre, String apellido, String mail, String tema, LocalDateTime localDateTime) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.mail = mail;
 		this.tema = tema;
-		this.fechaAlta = fechaAlta;
+		this.fechaAlta = localDateTime;
 	}
 
 	//otra forma de polimorfismo: SOBREESCRITURA, un metodo que existe en una clase base (java.lang.Object) 
@@ -70,7 +70,11 @@ public class Orador {
 	}
 
 	public void setApellido(String apellido) {
-		this.apellido = apellido;
+		if(apellido != null) { 
+			this.apellido = apellido;
+		}else {
+			this.apellido = "N/D";
+		}
 	}
 
 	public String getMail() {
@@ -78,7 +82,11 @@ public class Orador {
 	}
 
 	public void setMail(String mail) {
-		this.mail = mail;
+		if(mail != null) { 
+			this.mail = mail;
+		}else {
+			this.mail = "N/D";
+		}
 	}
 
 	public String getTema() {
@@ -86,23 +94,23 @@ public class Orador {
 	}
 
 	public void setTema(String tema) {
-		this.tema = tema;
+		if(tema != null) { 
+			this.tema = tema;
+		}else {
+			this.tema = "N/D";
+		}
 	}
 
-	public LocalDate getFechaAlta() {
+	public LocalDateTime getFechaAlta() {
 		return fechaAlta;
 	}
 
-	public void setFechaAlta(LocalDate fechaAlta) {
+	public void setFechaAlta(LocalDateTime fechaAlta) {
 		this.fechaAlta = fechaAlta;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	
-	
-	///ALT+shit+s
 	
 }

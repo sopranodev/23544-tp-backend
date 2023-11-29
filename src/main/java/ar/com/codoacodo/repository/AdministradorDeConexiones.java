@@ -9,14 +9,14 @@ public class AdministradorDeConexiones {
 	//AdminitradordeConexiones.metodo()
 	public static Connection getConnection() {
 		String username = "root";
-		String password = "secret";
-		String port = "33060";
+		String password = "P4t4g0n14";
+		String port = "3306";
 		String host = "localhost";
-		String dbName = "DB-23044";
+		String dbName = "#23544";
 		
 		String diverName = "com.mysql.cj.jdbc.Driver";
 		
-		String dbUrl = "jdbc:mysql://"+host+":"+port+"/"+dbName + "?serverTimeZone=UTC&useSSL=false";
+		String dbUrl = "jdbc:mysql://"+host+":"+port+"/"+dbName + "?allowPublicKeyRetrieval=true&serverTimeZone=UTC&useSSL=false";
 			
 		//no vemos try/catch! esto se ve en spring, PERO lo vamos a usar
 		try {
